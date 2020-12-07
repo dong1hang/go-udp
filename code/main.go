@@ -4,7 +4,7 @@ import "fmt"
 
 //入口
 
-func main() {
+func main1() {
 	fmt.Println("hello game start ")
 	bc := NewBlockchain() //创建区块链
 	bc.AddBlock("区块1 pay 10")
