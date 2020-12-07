@@ -6,8 +6,10 @@ type BlockChain struct {
 }
 
 //增加一个区块
-func (blocks *BlockChain) AddBlock(data string) {
-
+func (blockChain *BlockChain) AddBlock(data string) {
+	prevBlock := blockChain.blocks[len(blockChain.blocks)-1] //取出最后一块
+	newBlock := NewBlock(data, prevBlock.Hash)               //创建一个区块
+	blockChain.blocks = append(blockChain.blocks, newBlock)  //区块链插入新区块
 }
 
 //创建一个区块链
